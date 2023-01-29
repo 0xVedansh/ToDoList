@@ -2,10 +2,10 @@
     --primary: #EA40A4;
     --public: #3A82EE;
     --personal: var(--primary);
-    --light: #EEE;
+    --light: #dedede;
     --grey: #888;
     --dark: #313154;
-    --danger: #FF5B57;
+    --danger: #ff3333;
 
     --shadow: 0 1px 3px rgba(0,0,0,0.1);
 
@@ -18,6 +18,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', 'sans-serif';
+    text-decoration: none;
 }
 
 input:not([type="radio"]):not([type="checkbox"]), button{
@@ -117,6 +118,7 @@ input[type="checkbox"]{
     border: 2px solid var(--public);
     box-shadow: var(--public-glow);
 }
+
 .bubble.Personal{
     display: flex;
     align-items: center;
@@ -175,6 +177,81 @@ input:checked ~ .bubble::after{
     box-shadow: var(--public-glow);
     cursor: pointer;
     transition: 0.2s ease-in-out;
+}
+
+.popup_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    user-select: none;
+    width: 400px;
+    background-color: #f2f2f2;
+    text-align: center;
+    align-items: center;
+    padding: 2.5rem;
+    border: 1px solid #b3b3b3;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.popup_box i{
+    font-size: 5rem;
+    color: rgb(10, 148, 5);
+    border: 5px solid rgb(10, 148, 5);
+    padding: 1rem 2rem;
+    border-radius: 50%;
+    margin: -10px 0px 20px 0px;
+}
+
+.popup_box h1{
+    font-size: 1.875rem;
+    color: #1b2631;
+    margin-bottom: 5px;
+}
+
+/* .popup_box label{
+    font-size: 23px;
+    color: #404040;
+} */
+
+.popup_box .btns{
+    margin: 40px 0px 0px 0px;
+}
+
+/* .btns .btn2 should will be added later*/
+.btns .btn1{
+    background: var(--public);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #056af8;
+    border-radius: 7px;
+}
+
+/* .btns .btn2{
+    background-color: var(--danger);
+    margin-left: 20px;
+    border: 1px solid #cc0000;
+} */
+
+.btn1:hover{
+    transition: 0.5s;
+    background-color: #0059b3;
+}
+
+/* .btn2:hover{
+    transition: 0.5s;
+    background-color: #e60000;
+} */
+
+.click{
+    font-weight: bold;
+    border: 1px solid #0059b3;
 }
 
 .create-ToDo input[type="submit"]:hover{

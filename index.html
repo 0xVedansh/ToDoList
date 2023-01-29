@@ -8,6 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.click').click(function(){
+                $('.popup_box').css({
+                    "opacity":"1", "pointer-events":"auto"
+                });
+            });
+            $('.btn1').click(function(){
+                $('.popup_box').css({
+                    "opacity":"0", "pointer-events":"none"
+                });
+            });
+        });
+    </script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -40,7 +56,16 @@
                 </label>
             </div>
 
-            <input type="submit" value="Add To-Do">
+            <input type="submit" value="Add To-Do" class="click">
+            <div class="popup_box">
+                <i class="fa-solid fa-check"></i>
+                <h1>Success! Your task is added in the list!</h1>
+                <!-- <label>Select one option:</label> -->
+                <div class="btns">
+                    <a href="#" class="btn1">Continue</a>
+                    <!-- <a href="#" class="btn2">Edit-Task</a> -->
+                </div>
+            </div>
         </form>
         </section> 
 
